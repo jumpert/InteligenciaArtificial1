@@ -49,8 +49,11 @@ La Machine Learning (ML) es el aprendizaje automático de los datos, mientras qu
 ![Conceptos](https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/8f3c54e1-6fb0-480a-9b3a-e59308c57ac6)
 
 **AI:** La capacidad de una máquina para imitar el comportamiento inteligente humano.
+
 **ML:** Un subconjunto de AI que utiliza algoritmos estadísticos para permitir que las computadoras aprendan de los datos.
+
 **DL:** Un subconjunto de ML que utiliza redes neuronales para aprender de los datos.
+
 **NPL:** Un subconjunto de AI que permite a las computadoras comprender el lenguaje humano.
 
 </br>
@@ -79,7 +82,7 @@ Es un posible proceso sistemático para la resolución de problemas de Data Scie
 
 ## El proceso CRISP-DM
 
-![El proceso CRISP-DM](https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/cb2283d2-dac7-4e55-8ffb-25a71363288b)
+<img src="https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/cb2283d2-dac7-4e55-8ffb-25a71363288b" alt="Proceso de Data Science" width="600" height="600" />
 
 ### Comprensión del negocio
 
