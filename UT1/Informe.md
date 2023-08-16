@@ -22,6 +22,7 @@ Al culminar esta unidad de aprendizaje serás capaz de:
 - Revisión de herramientas modernas a ser utilizadas en el curso (Weka, RapidMiner, etc.) 
 - Revisión de Conceptos básicos de estadística descriptiva y utilización de planillas electrónicas para tratamiento de datos 
 
+</br>
 
 # ¿Qués es el Machine Learning?
 
@@ -52,6 +53,7 @@ La Machine Learning (ML) es el aprendizaje automático de los datos, mientras qu
 **DL:** Un subconjunto de ML que utiliza redes neuronales para aprender de los datos.
 **NPL:** Un subconjunto de AI que permite a las computadoras comprender el lenguaje humano.
 
+</br>
 
 # Plataformas y herramientas
 
@@ -62,7 +64,7 @@ La Machine Learning (ML) es el aprendizaje automático de los datos, mientras qu
 5. **OpenNN:** Es una librería de código abierto para programación de redes neuronales.
 
 > Recuperado de https://www.simplilearn.com/best-machine-learning-tools-article.
-
+</br>
 
 # Proceso de Data Science
 
@@ -104,6 +106,8 @@ Evaluar el modelo creado, ver si cumple con los requerimientos y objetivos plant
 Desplegar el modelo, aplicado a una aplicación del cliente.
 
 El realizar este proceso permite tener el conocimiento profundo y conocer las acciones a tomar. Ejemplos de esto son: Detección de fraudes, entre otros.
+
+</br>
 
 # Tipos de Algoritmos y sus aplicaciones
 
