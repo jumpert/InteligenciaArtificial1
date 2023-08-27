@@ -8,6 +8,13 @@
   - [:open_file_folder: Resumenes](./UT1/Resumenes)
   - [:page_facing_up: Informe](./UT1/Informe.md)
 
+### :card_index_dividers: [**Unidad Temática 2 - Preparación de datos y fundamentos de ML**](./UT2)
+  - [:open_file_folder: Ejercicios](./UT2/Ejercicios)
+  - [:open_file_folder: Materiales](./UT2/Materiales)
+  - [:open_file_folder: Resumenes](./UT2/Resumenes)
+  - [:page_facing_up: Informe](./UT2/Informe.md)
+
+
 <!--
 
 ### :round_pushpin: [Parciales](./Parciales)
