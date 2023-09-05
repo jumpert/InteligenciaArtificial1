@@ -13,6 +13,7 @@ Se usa para encontrar valores de parámetros (coeficientes) para una función $f
 Comenzar con valores de coeficiente = 0.0 o pequeños valores aleatorios.
 El costo de la función se calcula para cada coeficiente.
 $$cost = f(coeficiente)$$
+
 $$cost = evaluate(f(coeficiente))$$
 
 Se requiere conocer la `pendiente` y la dirección `signo`, para mover el coeficiente en orden.
@@ -145,6 +146,7 @@ Si bien la regresión lineal simple y la multiple se calculan de manera distinta
 
 Se busca modelar los datos de la siguiente manera:
 $$y = B0 + B1 * x$$
+
 Siendo $B0$ y $B1$ los coeficientes que debemos estimar, y $x$ la variable de entrada.
 $B0$ se denomina `intercepto` ya que determina donde la linea de regresión intercepta el eje Y. $B1$ se denomina `pendiente` ya que define la inclinación de la linea de regresión.
 
@@ -207,6 +209,7 @@ Ahora debemos calcular la parte inferior de la formula. Comenzamos calculando el
 Calculando la suma de los cuadrados obtenidos tenemos el denominador 10. Ahora podemos sacar la pendiente $B1$:
 
 $$B1 = 8 / 10$$
+
 $$B1 = 0.8$$
 
 ### Estimando el intercepto ($B0$)
@@ -214,7 +217,9 @@ $$B1 = 0.8$$
 Ahora que tenemos la pendiente $B1$ podemos calcular el intercepto $B0$ usando la formula de más arriba.
 
 $$B0 = mean(y) - B1 * mean(x)$$
+
 $$B0 = 2.8 - 0.8 * 3$$
+
 $$B0 = 0.4$$
 
 ### Haciendo predicciones 
@@ -222,6 +227,7 @@ $$B0 = 0.4$$
 Ahora tenemos los coeficientes para nuestra ecuación de regresión lineal simple. 
 
 $$y = B0 + B1 * x$$
+
 $$y = 0.4 + 0.8 * x$$
 
 Ahora podemos hacer predicciones para cada valor de $x$ en nuestro dataset.
@@ -259,6 +265,7 @@ Donde puede usar la función `SQRT()` en su hoja de cálculo para calcular la ra
 Ahora podemos calcular el error cuadrático medio.
 
 $$RMSE = sqrt((0.04 + 1 + 0.36 + 0.64 + 0.36) / 5)$$
+
 $$RMSE = 0.692820323$$
 
 O, cada prediccion tiene un promedio de eeor sobre los 0.692 unidades.
@@ -274,6 +281,7 @@ Donde $correlation(x, y)$ es la correlación entre $x$ e $y$, $stdev(x)$ es la d
 La desviacion estandar es una medida de cuanto el promedio puede separarse de la media. Puede usar la funcio PEARSON() en su hoja de cálculo para calcular la correlación entre $x$ e $y$.
 
 $$B1 = 0.852802865 * (1.483239697 / 1.58113883)$$
+
 $$B1 = 0.8$$
 
 
@@ -308,6 +316,7 @@ La regresión logística modela la probabilidad de la clase de incumplimiento (p
 $$P(sex=male|height)$$
 
 Escrito de otra manera modelamos la probabilidad de que una entrada $X$ pertenece a la clase predeterminada $(Y = 1)$, podemos escribir esto formalmente como:
+
 $$P(X) = P(Y = 1|X)$$
 
 La regresion logistica es un metodo lineal, pero sus predicciones son transformadas por la funcion logistica. El impacto de esto es que no podemos entender profundamente la prediccion como una combinacion lineal de entradas como tenemos en la regresion lineal, por ejemplo conituando sobre lo de arriba, el modelo se puede expresar como: 
@@ -319,6 +328,7 @@ transformable en:
 $$ln(\frac{P(X)}{1 - P(X)}) = B0 + B1 * X$$
 
 El radio de la clase es llamado `odds` y es calculado como el radio de la probabilidad del evento dividido por la probabilidad del no evento. Ej. $\frac{0.8}{1-0.8}$ que da un odds de 4. Entonces se puede escribir como:
+
 $$ln(odds) = B0 + B1 * X$$
 
 O transformarlo a su notación original:
@@ -338,12 +348,15 @@ Hemos aprendido los coeficientes de B0 = 100 y B1 = 0:6. Usando la ecuación ant
 Usaremos EXP() para e, porque eso es lo que puedes usar si escribes este ejemplo en tu hoja de cálculo:
 
 $$y = \frac{e^B0+B1*X}{1+e^B0+B1*X}$$
+
 $$y = \frac{e^{-100+0.6*150}}{1+e^{-100+0.6*X}}$$
+
 $$y = 0.0000453978687$$
 
 O una probabilidad cercana a cero de que la persona sea un hombre. En la práctica podemos utilizar las probabilidades directamente. Como esto es clasificación y queremos una respuesta clara, podemos ajustar las probabilidades a un valor de clase binario, por ejemplo:
 
 $$Prediction = 0  IF  p(male) < 0.5$$
+
 $$Prediction = 1  IF  p(male) >= 0.5$$
 
 ### Prepare Data for Logistic Regression
