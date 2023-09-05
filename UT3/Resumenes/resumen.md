@@ -112,7 +112,7 @@ $$peso = 88.1$$
 ### 10.7 - Prepare Data for Linear Regression
 
 La regresión lineal a sido estudiada en gran profundidad, y hay muchos documentos sobre como debes estructurar los datos de mejor manera para usar el modelo. En la practica Ordinary Least Squares Regression es implementacion más común. 
-![Peso por altura](pesoXaltura.png)
+![Peso por altura](img/pesoXaltura.png)
 
 **Linear Assumption**: La regresión lineal supone que la relación entre la entrada y la salida es lineal. No soporta nada más. Esto puede parecer obvio, pero es bueno recordarlo cuando tienes muchos atributos. Es posible que necesite transformar datos para que la relación sea lineal (por ejemplo, transformación logarítmica para una relación exponencial).
 
@@ -123,3 +123,239 @@ La regresión lineal a sido estudiada en gran profundidad, y hay muchos document
 **Gaussian Distributions**: La regresión lineal hará predicciones más confiables si sus variables de entrada y salida tienen una distribución gaussiana. Puede obtener algún beneficio utilizando transformaciones (por ejemplo, log o BoxCox) en sus variables para hacer que su distribución sea más gaussiana.
 
 **Rescale Inputs**: La regresión lineal a menudo generará predicciones más confiables si reescala las variables de entrada mediante estandarización o normalización.
+
+
+## Capítulo 11 - Simple Linear Regression Tutorial
+
+| $X$ | $Y$ |
+| --- | --- |
+| 1 | 1 |
+| 2 | 3 |
+| 4 | 3 |
+| 3 | 2 |
+| 5 | 5 |
+
+_Dataset de tutorial_ 
+
+Cuando se posee un atributo de entrada $x$ y se busca usar la regresión lineal para predecir una variable de salida $y$, se llama regresión lineal simple. Si se poseen múltiples atributos de entrada ($x1$, $x2$, $x3$, etc.), se llama regresión lineal múltiple.
+
+![Gráfico del dataset de tutorial](img/GraficoDispersion.png)
+
+Si bien la regresión lineal simple y la multiple se calculan de manera distintas, veremos el modelo simple desde nuestro Dataset de tutorial.
+
+Se busca modelar los datos de la siguiente manera:
+$$y = B0 + B1 * x$$
+Siendo $B0$ y $B1$ los coeficientes que debemos estimar, y $x$ la variable de entrada.
+$B0$ se denomina `intercepto` ya que determina donde la linea de regresión intercepta el eje Y. $B1$ se denomina `pendiente` ya que define la inclinación de la linea de regresión.
+
+Nuestro objetivo es encontrar la mejor estimacion para los coeficientes que minimice el error de predicción $y$ para cada valor de $x$.
+Se puede comensar estimando el valor de $B1$ como:
+
+![Formula de B1](img/FormulaB1.png)
+
+Donde $mean()$  es el promedio de la variable en nuestro dataset. La $xi$ y la $yi$ refieren a la necesidad de repetir el calculo a través de los valores en el dataset. 
+Podemos calcular $B0$ usando $B1$ y algunas estadísticas de nuestro dataset como:
+
+$$B0 = mean(y) - B1 * mean(x)$$
+
+### Estimando la pendiente ($B1$)
+
+![Calculo de Pendiente](img/CalculoPendiente.png)
+
+Lo primero es calcular el promedio de $x$ y $y$. para eso se utiliza la formula de más arriba. Cuando $n$ es el numero de valores, se puede hacer el `promedio()` dando como resultado los valores de la parte inferior de la formula. 
+
+Debemos calcular el error para cada variable a partir del promedio. Comencemos por la $x$:
+| $x$ | $mean(x)$ | $x - mean(x)$ | 
+| --- | --- | --- |
+| 1 | 3 | -2 |
+| 2 |   | -1 |
+| 4 |   | 1 |
+| 3 |   | 0 |
+| 5 |   | 2 |
+
+Ahora calculemos el error para la variable $y$:
+| $y$ | $mean(y)$ | $y - mean(y)$ |
+| --- | --- | --- |
+| 1 | 2.8 | -1.8 |
+| 3 |   | 0.2 |
+| 3 |   | 0.2 |
+| 2 |   | -0.8 |
+| 5 |   | 2.2 |
+
+Ahora que tenemos el error para cada variable, podemos multiplicarlos juntos y sumarlos para obtener el valor de la parte superior de la formula.
+
+| $x - mean(x)$ | $y - mean(y)$ | $Multiplication$ |
+| --- | --- | --- |
+| -2 | -1.8 | 3.6 |
+| -1 | 0.2 | -0.2 |
+| 1 | 0.2 | 0.2 |
+| 0 | -0.8 | 0 |
+| 2 | 2.2 | 4.4 |
+
+$$sum(x - mean(x)) * (y - mean(y)) = 8$$
+
+Ahora debemos calcular la parte inferior de la formula. Comenzamos calculando el error al cuadrado para cada variable. 
+
+| $x - mean(x)$ | $squared$ |
+| --- | --- |
+| -2 | 4 |
+| -1 | 1 |
+| 1 | 1 |
+| 0 | 0 |
+| 2 | 4 |
+
+Calculando la suma de los cuadrados obtenidos tenemos el denominador 10. Ahora podemos sacar la pendiente $B1$:
+
+$$B1 = 8 / 10$$
+$$B1 = 0.8$$
+
+### Estimando el intercepto ($B0$)
+
+Ahora que tenemos la pendiente $B1$ podemos calcular el intercepto $B0$ usando la formula de más arriba.
+
+$$B0 = mean(y) - B1 * mean(x)$$
+$$B0 = 2.8 - 0.8 * 3$$
+$$B0 = 0.4$$
+
+### Haciendo predicciones 
+
+Ahora tenemos los coeficientes para nuestra ecuación de regresión lineal simple. 
+
+$$y = B0 + B1 * x$$
+$$y = 0.4 + 0.8 * x$$
+
+Ahora podemos hacer predicciones para cada valor de $x$ en nuestro dataset.
+
+| $x$ | $prediccion de y$$ |
+| --- | --- |
+| 1 | 1.2 |
+| 2 | 2 |
+| 4 | 3.6 |
+| 3 | 2.8 |
+| 5 | 4.4 |
+
+También podemos grafucar la predicción como una linea con nuestros datos. Lo que nos permite ver el modelo lineal de nuestros datos.
+
+### Estimando el error
+
+podemos calcular un error para nuestra prediccion llamado el Root Mean Squared Error o RMSE.
+
+$$RMSE = sqrt(sum((pi - yi)^2) / n)$$
+
+Donde $pi$ es la prediccion para el valor $i$ y $yi$ es el valor real para el valor $i$.
+
+![Grafico de prediccion de Dataset entrenamiento](img/PrediccionEntrenamiento.png)
+
+Donde puede usar la función `SQRT()` en su hoja de cálculo para calcular la raíz cuadrada, $p$ es el valor predicho e $y$ es el valor real, $i$ es el índice para una instancia específica, porque debemos calcular el error en todos los valores predichos. Primero debemos calcular la diferencia entre la predicción de cada modelo y los valores reales de $y$.
+
+| $Predicted$ | $y$ | $Predicted - y$ | $Squared Error$ |
+| --- | --- | --- | --- |
+| 1.2 | 1 | 0.2 | 0.04 |
+| 2 | 3 | -1 | 1 |
+| 3.6 | 3 | 0.6 | 0.36 |
+| 2.8 | 2 | 0.8 | 0.64 |
+| 4.4 | 5 | -0.6 | 0.36 |
+
+Ahora podemos calcular el error cuadrático medio.
+
+$$RMSE = sqrt((0.04 + 1 + 0.36 + 0.64 + 0.36) / 5)$$
+$$RMSE = 0.692820323$$
+
+O, cada prediccion tiene un promedio de eeor sobre los 0.692 unidades.
+
+### Atajo
+
+Antes de terminar, quiero mostrarte un atajo rápido para calcular los coeficientes.
+
+$$B1 = correlation(x, y) * (stdev(y) / stdev(x))$$
+
+Donde $correlation(x, y)$ es la correlación entre $x$ e $y$, $stdev(x)$ es la desviación estándar de $x$ y $stdev(y)$ es la desviación estándar de $y$.
+
+La desviacion estandar es una medida de cuanto el promedio puede separarse de la media. Puede usar la funcio PEARSON() en su hoja de cálculo para calcular la correlación entre $x$ e $y$.
+
+$$B1 = 0.852802865 * (1.483239697 / 1.58113883)$$
+$$B1 = 0.8$$
+
+
+## Capítulo 13 - Logistic Regression
+
+La regresion logistica es otra tecnica pedida por el ML desde el campo de la estadistica.
+Es el método de referencia para problemas de clasificación binaria (problemas con dos valores de clase).
+
+### Función logística
+
+La regresión logística recibe su nombre de la función utilizada en el núcleo del método, la función logística. Tambien llamada funcion sigmoid fue desarrollada por estadísticos para describir las propiedades del crecimiento de la población en ecología, aumentando rápidamente y alcanzando el máximo en la capacidad de carga del medio ambiente. 
+Es una curva en forma de S que puede tomar cualquier número con valor real y asignarlo a un valor entre 0 y 1, pero nunca exactamente en esos límites.
+
+![Funcion logistica](img/FuncionLogistica.png)
+
+Donde e es la base de los logaritmos naturales (el número de Euler o la función EXP() en su hoja de cálculo) y el valor es el valor numérico real que desea transformar. A continuación se muestra un diagrama de los números entre -5 y 5 transformados en el rango 0 y 1 usando la función logística.
+
+![Funcion Logistica Grafico](img/FuncionLogisticaGrafico.png)
+
+### Representacion usada por la regresion logistica
+
+La regresión logística usa una ecuación como la representacion, muy simiar a la regresion lineal. Valores de entrada $x$ se combinan linealmente usando sus valores de peso o coeficiente para predecir un valor de salida $y$. Una diferencia clave de la regresión lineal es que el valor de salida comienza siendo modelado como valores binarios (0 o 1) en lugar de valores numéricos.
+
+![Ecuacion Logistic Regression](img/EcuacionLogisticRegression.png)
+
+Donde $y$ es la salida predicta, $B0$ es el sesgo o valor de intercepto y $B1$ es el coeficiente para la variable de entrada $x$. Cada columna en su dato de entrada tiene asociado un coeficiente $B$ que debe ser aprendido por tus datos de entrenamiento.
+
+### Logistic Regression Predict Probabilities
+
+La regresión logística modela la probabilidad de la clase de incumplimiento (por ejemplo, la primera clase). Por ejemplo, si modelamos el sexo de las personas como masculino o femenino a partir de su altura, entonces la primera clase podría ser masculina y el modelo de regresión logística podría escribirse como la probabilidad de que sea hombre dada la altura de una persona, o más formalmente:
+
+$$P(sex=male|height)$$
+
+Escrito de otra manera modelamos la probabilidad de que una entrada $X$ pertenece a la clase predeterminada $(Y = 1)$, podemos escribir esto formalmente como:
+$$P(X) = P(Y = 1|X)$$
+
+La regresion logistica es un metodo lineal, pero sus predicciones son transformadas por la funcion logistica. El impacto de esto es que no podemos entender profundamente la prediccion como una combinacion lineal de entradas como tenemos en la regresion lineal, por ejemplo conituando sobre lo de arriba, el modelo se puede expresar como: 
+
+![Modelo Regresion Logistica](img/ModeloRegresionLogistica.png)
+
+transformable en:
+
+$$ln(\frac{P(X)}{1 - P(X)}) = B0 + B1 * X$$
+
+El radio de la clase es llamado `odds` y es calculado como el radio de la probabilidad del evento dividido por la probabilidad del no evento. Ej. $\frac{0.8}{1-0.8}$ que da un odds de 4. Entonces se puede escribir como:
+$$ln(odds) = B0 + B1 * X$$
+
+O transformarlo a su notación original:
+
+$$odds = e^{B0 + B1 * X}$$
+
+### Learning the Logistic Regression Model
+
+La regresion logistica se centra en la estimación de maxima verosimilitud. Esto significa que busca coeficientes que maximicen la probabilidad de los datos (o mas bien la probabilidad de los datos que se observan). Y esto se logra mediante el uso de un algoritmo de optimización iterativo como el descenso de gradiente.
+Los mejores coeficioentes pueden resultar de modelos que predigan valores cercanos a 1, por defecto de la clase y un valor cernao a 0 para otra clase.
+
+### Makong Predictions with Logistic Regression
+
+Hacer predicciones con un modelo de regresión logística es tan simple como ingresar números en la ecuación de regresión logística y calcular un resultado. Hagamos esto concreto con un ejemplo específico. Digamos que tenemos un modelo que puede predecir si una persona es hombre o mujer en función de su altura (completamente ficticio). Dada una altura de 150 cm la persona es hombre o mujer.
+
+Hemos aprendido los coeficientes de B0 = 100 y B1 = 0:6. Usando la ecuación anterior podemos calcular la probabilidad de que sea un hombre dada una altura de 150 cm o más formalmente P (malejheight = 150).
+Usaremos EXP() para e, porque eso es lo que puedes usar si escribes este ejemplo en tu hoja de cálculo:
+
+$$y = \frac{e^B0+B1*X}{1+e^B0+B1*X}$$
+$$y = \frac{e^{-100+0.6*150}}{1+e^{-100+0.6*X}}$$
+$$y = 0.0000453978687$$
+
+O una probabilidad cercana a cero de que la persona sea un hombre. En la práctica podemos utilizar las probabilidades directamente. Como esto es clasificación y queremos una respuesta clara, podemos ajustar las probabilidades a un valor de clase binario, por ejemplo:
+
+$$Prediction = 0  IF  p(male) < 0.5$$
+$$Prediction = 1  IF  p(male) >= 0.5$$
+
+### Prepare Data for Logistic Regression
+
+Las asunciones echas por la regresion logistica son similares a las de la regresion lineal. Se han realizado muchos estudios para definir estos supuestos y se utiliza un lenguaje estadístico y probabilístico preciso.
+
+**Variable de salida binaria:** Esto puede resultar obvio como ya lo hemos mencionado, pero la regresión logística está pensada para problemas de clasificación binaria (de dos clases). Predecirá la probabilidad de que una instancia pertenezca a la clase predeterminada, que se puede clasificar en una clasificación 0 o 1.
+
+**Eliminar ruido:** la regresión logística no supone ningún error en la variable de salida (y); considere eliminar valores atípicos y posiblemente instancias mal clasificadas de sus datos de entrenamiento.
+
+**Distribución gaussiana:** la regresión logística es un algoritmo lineal (con una transformación no lineal en la salida). Supone una relación lineal entre las variables de entrada y la salida. Las transformaciones de datos de sus variables de entrada que exponen mejor esta relación lineal pueden dar como resultado un modelo más preciso. Por ejemplo, puede utilizar log, root, Box-Cox y otras transformaciones univariadas para exponer mejor esta relación.
+
+**Eliminar entradas correlacionadas:** al igual que la regresión lineal, el modelo puede sobrepasar si tiene varias entradas altamente correlacionadas. Considere calcular las correlaciones por pares entre todas las entradas y eliminar las entradas altamente correlacionadas.
+
+**Falla al converger:** Es posible que el proceso de estimación de probabilidad esperada que aprende los coeficientes no converja. Esto puede suceder si hay muchas entradas altamente correlacionadas en sus datos o si los datos son muy escasos (por ejemplo, muchos ceros en sus datos de entrada).
