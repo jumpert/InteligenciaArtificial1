@@ -372,3 +372,7 @@ Las asunciones echas por la regresion logistica son similares a las de la regres
 **Eliminar entradas correlacionadas:** al igual que la regresión lineal, el modelo puede sobrepasar si tiene varias entradas altamente correlacionadas. Considere calcular las correlaciones por pares entre todas las entradas y eliminar las entradas altamente correlacionadas.
 
 **Falla al converger:** Es posible que el proceso de estimación de probabilidad esperada que aprende los coeficientes no converja. Esto puede suceder si hay muchas entradas altamente correlacionadas en sus datos o si los datos son muy escasos (por ejemplo, muchos ceros en sus datos de entrada).
+
+
+## Capítulo 15 - Linear Discriminant Analysis
+
