@@ -78,4 +78,45 @@ Utilizando la funcion Pendiente o el calculo desarrollado el resultado es: 0,342
 
 </br>
 
-# Ejercicio 2
+# Ejercicio 2 Regresión lineal con descenso de gradiente (1) 
+
+Minimizar una funcion siguiendo los gradientes de la función de costo.
+Necesitamos conocer la funcion de costo y sus derivadas.
+Moverse "hacia abajo" según el gradiente
+Las instancias se presentan al modelo de a una por vez
+El modelo hace una predicción, se calcula el error y se actualiza el modeo para reducir el error de la proxima predicción.
+En cada iteración se actualizan los "pesos" (coeficientes) del modelo.
+
+$w = w + alpha * delta$
+
+Donde ` alfa ` es la tasa de aprendizaje y ` delta ` es el error.
+
+y = 0.0 + 0.0 * x
+
+error = p(i) - y(i)
+
+p(i) = 0.0 + 0.0 * 1 = 0.0 , error = 0.0 - 1 = -1
+
+B0 (t+1) = B0(t) - alpha × error = 0.0 - 0.01 * -1 = 0.01
+
+B1 (t+1) = B1(t) - alpha * error * x 
+B1 (t+1) = 0.0 - 0.01 * -1 * 1 = 0.01
+
+Realizar 24 iteraciones sería apropiado para este problema, porque habremos estudiado 4 ciclos completos de los datos de entrenamiento.
+
+Acontinuación se listan los valores de B0 y B1 para cada iteración.
+
+![TA1-rep-Gradiente](src/TA1-rep-Gradiente.png)
+
+</br>
+
+Asimismo se realiza una grafica para apreciar el error en cada iteración.
+
+![TA1-rep-Gradiente-Error](src/TA1-rep-Gradiente-Error.png)
+
+</br>
+
+Finalmente se realiza el calculo del error cuadratico medio (RMSE) para los valores obtenidos.
+
+![TA1-rep-Gradiente-RMSE](src/TA1-rep-Gradiente-RMSE.png)
+
