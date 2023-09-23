@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UT3_PD1.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgb(255, 162, 0);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgb(255, 162, 0);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #eba000; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+	font-weight: bold;
+	background-color: #cecece85;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="unidad-tem%C3%A1tica-3">Unidad Temática 3</h1>
+<h2 id="pr%C3%A1ctico-domiciliario-1">Práctico Domiciliario 1</h2>
+<h2 id="materia-inteligencia-artificial-1">Materia: <strong>Inteligencia Artificial 1</strong></h2>
+<h3 id="estudiante">Estudiante:</h3>
+<p><strong>Juan M. Pérez</strong></p>
+</br>
+<hr>
+</br>
+<h2 id="ejercicio-1---regresi%C3%B3n-lineal-con-descenso-de-gradiente">Ejercicio 1 - Regresión lineal con descenso de gradiente</h2>
+<p>Dadas los siguientes datos <code>x = {1, 3, 2, 4, 6, 5}</code> y <code>y = {1, 2, 3, 3, 2, 5}</code>, utilizar una planilla excel para realizar gráfico de puntos.</p>
+<p>Realizar entre 18 - 24 iteraciones del algoritmo de descenso de gradiente para encontrar los valores de $\beta_0$ y $\beta_1$.</p>
+<p><img src="src/UT3-PD1-grafico.png" alt="UT3-PD1-grafico"></p>
+<h3 id="preguntas">Preguntas</h3>
+<p><strong>a.</strong> ¿Cuántas iteraciones serían apropiadas? ¿Podemos hacerlo adaptivo?</p>
+<p>Se puede hacer adaptivo, pero para este caso se realizaron 24 iteraciones. Se puede observar que a partir de la iteración 18 el valor de $\beta_0$ y $\beta_1$ no varían significativamente.</p>
+<p><strong>b.</strong> ¿Cuáles son los valores de B0 y B1 de todas las iteraciones? (mostrar una tabla) ¿cómo queda el modelo final?</p>
+<p><img src="src/UT3-PD1-tabla.png" alt="UT3-PD1-tabla"></p>
+<p>El modelo final queda de la siguiente manera:</p>
+<p>$$ y = 1,33049655985312 + 0,433627710131973*x $$</p>
+<p><strong>c.</strong> Graficar el error de predicción vs. iteraciones</p>
+<p><img src="src/UT3-PD1-grafico-error.png" alt="UT3-PD1-grafico-error"></p>
+<p><strong>d.</strong> Calcular el error cuadrático medio, y comparar con el obtenido en el TA1</p>
+<p>$$ RMSE = \sqrt{\frac{\sum_{i=1}^{n} (p_i - y_i)^2}{n}} $$</p>
+<p>El RMSE del TA1 es de 1,10122586815712 y en este caso el valor es de 0,0415144423295563.</p>
+<p>La diferencia entre ambos valores se debe a que en el TA1 se utilizó la fórmula de la regresión lineal simple, mientras que en este caso se utilizó el algoritmo de descenso de gradiente.</p>
+<p><strong>e.</strong> Generar valores de entrada entre 0 y 8, con paso 0.1, aplicar el modelo y graficar los resultados.</p>
+<p><img src="src/UT3-PD1-grafico-prediccion.png" alt="UT3-PD1-grafico-prediccion"></p>
+<p><strong>f.</strong> Analizar los datos de entrada desde la óptica de los requerimientos a tener en cuenta para aplicar un método de regresión lineal (listar y argumentar)</p>
+<ul>
+<li>Los datos deben ser continuos, no pueden ser discretos.</li>
+<li>Los datos deben estar correlacionados, que exista una relación entre ellos, de lo contrario no se puede aplicar regresión lineal.</li>
+<li>Los datos deben tener distribución normal, que la mayoría de los datos se encuentren en el centro de la distribución y que los datos se distribuyan de manera simétrica.</li>
+<li>Los datos deben tener independencia, que no exista relación entre ellos.</li>
+</ul>
+
+</body>
+</html>
