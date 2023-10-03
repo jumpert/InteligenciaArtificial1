@@ -24,6 +24,9 @@ Al culminar esta unidad de aprendizaje serás capaz de:
 
 </br>
 
+<iframe width="320" height="180" src="https://www.youtube.com/watch?v=cHB24HIHuSs" title="How to Ruin Your Business with Data Science and Machine Learning" frameborder="0" 
+ allowfullscreen="1"></iframe>
+
 # ¿Qués es el Machine Learning?
 
 ## Definición
