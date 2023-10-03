@@ -23,8 +23,9 @@ Al culminar esta unidad de aprendizaje serás capaz de:
 - Revisión de Conceptos básicos de estadística descriptiva y utilización de planillas electrónicas para tratamiento de datos 
 
 </br>
-
-[![image](https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/a829a37a-45c5-4998-8329-a945e78b46ce)](https://www.youtube.com/watch?v=cHB24HIHuSs)
+<a href="https://www.youtube.com/watch?v=cHB24HIHuSs">
+  <img src="https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/a829a37a-45c5-4998-8329-a945e78b46ce" alt="Texto alternativo">
+</a>
 
 # ¿Qués es el Machine Learning?
 
