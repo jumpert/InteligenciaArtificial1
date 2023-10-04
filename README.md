@@ -1,4 +1,4 @@
-![Inteligencia Artificial 1](https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/1199f8ca-829b-4f97-9dd8-662b3d5c7e26 "Inteligencia Artificial 1")
+
 
 ## Portafolio de Juan M. Pérez :man_student:
 
