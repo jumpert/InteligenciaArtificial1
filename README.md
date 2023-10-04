@@ -24,6 +24,12 @@ En el mismo se encuentran los trabajos realizados, informes por cada unidad y da
   - [:open_file_folder: Resumenes](./UT3/Resumenes)
   - [:page_facing_up: Informe](./UT3/Informe.md)
 
+### :card_index_dividers: [**Unidad Temática 4 - Algoritmos No Lineales**](./UT4)
+  - [:open_file_folder: Ejercicios](./UT4/Ejercicios)
+  - [:open_file_folder: Materiales](./UT4/Materiales)
+  - [:open_file_folder: Resumenes](./UT4/Resumenes)
+  - [:page_facing_up: Informe](./UT4/Informe.md)
+
 <!--
 
 ### :round_pushpin: [Parciales](./Parciales)
