@@ -1,36 +1,45 @@
 ![Inteligencia Artificial 1](https://github.com/jumpert/InteligenciaArtificial1/assets/88668277/1199f8ca-829b-4f97-9dd8-662b3d5c7e26 "Inteligencia Artificial 1")
 
-## Portafolio de Juan M. Pérez :man_student:
+<h1>Portafolio de Juan M. Pérez &#127891;</h1>
+
 
 Les doy la bienvenida a mi portafolio de la materia Inteligencia Artificial 1, en el cual se encuentran los trabajos realizados durante el 2do semestre del 2023.
 
 En el mismo se encuentran los trabajos realizados, informes por cada unidad y datos relevantes para la materia. Estos datos permiten evaluar el progreso de la materia y el nivel de aprendizaje alcanzado. 
 
-### :card_index_dividers: [**Unidad Temática 1 - Introducción al Aprendizaje Automático**](./UT1)
-  - [:open_file_folder: Ejercicios](./UT1/Ejercicios)
-  - [:open_file_folder: Materiales](./UT1/Materiales)
-  - [:open_file_folder: Resumenes](./UT1/Resumenes)
-  - [:page_facing_up: Informe](./UT1/Informe.md)
+<h2><a href="./UT1">&#128193; Unidad Temática 1 - Introducción al Aprendizaje Automático</a></h2>
+  <ul>
+        <li><a href="./UT1/Ejercicios">&#128194; Ejercicios</a></li>
+        <li><a href="./UT1/Materiales">&#128194; Materiales</a></li>
+        <li><a href="./UT1/Resumenes">&#128194; Resúmenes</a></li>
+        <li><a href="./UT1/Informe.md">&#128196; Informe</a></li>
+    </ul>
 
-### :card_index_dividers: [**Unidad Temática 2 - Preparación de datos y fundamentos de ML**](./UT2)
-  - [:open_file_folder: Ejercicios](./UT2/Ejercicios)
-  - [:open_file_folder: Materiales](./UT2/Materiales)
-  - [:open_file_folder: Resumenes](./UT2/Resumenes)
-  - [:page_facing_up: Informe](./UT2/Informe.md)
+<h2><a href="./UT2">&#128193; Unidad Temática 2 - Preparación de datos y fundamentos de ML </a></h2>
+    <ul>
+        <li><a href="./UT2/Ejercicios">&#128194; Ejercicios</a></li>
+        <li><a href="./UT2/Materiales">&#128194; Materiales</a></li>
+        <li><a href="./UT2/Resumenes">&#128194; Resúmenes</a></li>
+        <li><a href="./UT2/Informe.md">&#128196; Informe</a></li>
+    </ul>
 
-### :card_index_dividers: [**Unidad Temática 3 - Algoritmos Lineales**](./UT3)
-  - [:open_file_folder: Ejercicios](./UT3/Ejercicios)
-  - [:open_file_folder: Materiales](./UT3/Materiales)
-  - [:open_file_folder: Resumenes](./UT3/Resumenes)
-  - [:page_facing_up: Informe](./UT3/Informe.md)
+<h2><a href="./UT3">&#128193; Unidad Temática 3 - Algoritmos Lineales</a></h2>
+     <ul>
+        <li><a href="./UT3/Ejercicios">&#128194; Ejercicios</a></li>
+        <li><a href="./UT3/Materiales">&#128194; Materiales</a></li>
+        <li><a href="./UT3/Resumenes">&#128194; Resúmenes</a></li>
+        <li><a href="./UT3/Informe.md">&#128196; Informe</a></li>
+    </ul>
 
-### :card_index_dividers: [**Unidad Temática 4 - Algoritmos No Lineales**](./UT4)
-  - [:open_file_folder: Ejercicios](./UT4/Ejercicios)
-  - [:open_file_folder: Materiales](./UT4/Materiales)
-  - [:open_file_folder: Resumenes](./UT4/Resumenes)
-  - [:page_facing_up: Informe](./UT4/Informe.md)
+<h2><a href="./UT4">&#128193; Unidad Temática 4 - Algoritmos No Lineales</a></h2>
+     <ul>
+        <li><a href="./UT4/Ejercicios">&#128194; Ejercicios</a></li>
+        <li><a href="./UT4/Materiales">&#128194; Materiales</a></li>
+        <li><a href="./UT4/Resumenes">&#128194; Resúmenes</a></li>
+        <li><a href="./UT4/Informe.md">&#128196; Informe</a></li>
+    </ul>
   
-Actualización: 03 de octubre de 2023
+Actualización: 09 de octubre de 2023
 
 <!--
 
