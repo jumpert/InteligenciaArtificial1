@@ -1,5 +1,7 @@
 # Unidad Temática 3 - Algoritmos lineales
 
+<img src="./Resumenes/AlgoritmosLineales.png" height="300">
+
 ## Objetivos
 
 En esta unidad de aprendizaje se pretende comenzar a analizar los algoritmos y modelos de ML, empezando por algoritmos sencillos lineales, profundizando también el estudio de la preparación previa de los datos y las técnicas de validación de los modelos. 
@@ -48,7 +50,7 @@ Lo que nos permite tener una visión más amplia de las herramientas que se pued
 
 - [Data Science Concepts and Practice](../BibliografiaCurso/Data-Science-Concepts-and-Practice-2nd-Edition-3.pdf)
 
--[Data Mining For The Masses](../BibliografiaCurso/DataMiningForTheMasses.pdf)
+- [Data Mining For The Masses](../BibliografiaCurso/DataMiningForTheMasses.pdf)
 
 
 ## Reflexiones :thought_balloon:

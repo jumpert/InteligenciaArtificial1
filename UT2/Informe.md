@@ -1,5 +1,7 @@
 # Unidad Temática 2 - Preparación de datos y fundamentos de ML
 
+![Ciclo de preparación de los datos](./Resumenes/ML_dataPreparing.png)
+
 ## Objetivos
 
 En esta unidad de aprendizaje pretendemos:

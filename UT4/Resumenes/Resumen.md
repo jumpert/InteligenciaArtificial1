@@ -36,7 +36,7 @@ Manhattan: $d(X,Y) = |x_1 - y_1| + |x_2 - y_2|$
 
 Chebyshev: $d(X,Y) = max(|x_1 - y_1|, |x_2 - y_2|)$
 
-![Distance measures.](Distance_measures..png)
+![Distance measures.](Distance_measures.png)
 
 **Weights** 
 
