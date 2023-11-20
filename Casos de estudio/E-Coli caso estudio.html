@@ -8,16 +8,16 @@
 />
 
 <h2>Relevancia y objetivo del caso de estudio</h2>
-<p>
+<br>
   La bacteria Escherichia coli (E. coli) es comúnmente hallada en los intestinos
   de personas y animales sanos, siendo la mayoría de sus cepas inofensivas o
-  causantes de diarrea breve. Sin embargo, ciertas variantes, como la
+  causantes de diarrea breve. </br>Sin embargo, ciertas variantes, como la
   Escherichia coli O157:H7, pueden provocar síntomas más severos como cólicos
-  abdominales intensos, diarrea con sangre y vómitos. La exposición a esta
+  abdominales intensos, diarrea con sangre y vómitos. </br>La exposición a esta
   bacteria puede ocurrir a través de agua o alimentos contaminados,
   especialmente vegetales crudos y carne de res poco cocida. En el contexto del
   estudio sobre bacterias gramnegativas, se busca predecir la localización de
-  proteínas utilizando algoritmos de machine learning. Este enfoque implica
+  proteínas utilizando algoritmos de machine learning.</br> Este enfoque implica
   clasificar las proteínas según su ubicación en el organismo. La aplicación de
   diversos algoritmos contribuirá a este proceso de clasificación, permitiendo
   una mejor comprensión de la distribución y función de las proteínas en
@@ -254,7 +254,7 @@
   Utilizando un subproceso denominado "Data Preparation" en RapidMiner, se
   realizaron las tareas de acondicionamiento del dataset. El dataset no presenta
   valores nulos o faltantes, por lo que no es necesario realizar una limpieza de
-  datos. Lo que si es necesario hacer es acotar aquellos valores que se
+  datos. </br>Lo que si es necesario hacer es acotar aquellos valores que se
   encuentran fuera de rango, para ello se utilizó el operador "Filter Examples"
   de Rapidminer, el cual nos permite acotar los valores de los atributos que se
   encuentran fuera de rango después de utilizar el operador "Detect Outliers".
@@ -307,7 +307,7 @@
 <p>
   Para cada uno de los algoritmos se utilizó el operador "Cross Validation" de
   Rapidminer, el cual nos permite realizar una validación cruzada de los datos,
-  para así poder obtener una mejor precisión de los resultados. Las
+  para así poder obtener una mejor precisión de los resultados. </br>Las
   configuraciones utilizada en el operador "Cross Validation" fueron las
   siguientes: - Número de folds: 10 - Sampling Type: Stratified Sampling - Local
   random seed: 1992
@@ -341,7 +341,7 @@
   Ahora bien, el unico ajuste realizado fue colocar un check en el "laplace
   correction" del operador, y para poder conocer más en detalle los resultados
   obtenidos por el algoritmo, se utilizó el operador "Performance
-  (Classification)", el cual nos permite obtener la precisión. Los resultados
+  (Classification)", el cual nos permite obtener la precisión. </br>Los resultados
   son presentados en la siguiente tabla:
 </p>
 
@@ -414,7 +414,7 @@
 
 <p>
   El algoritmo de K-NN es un algoritmo de clasificación que se basa en la
-  cercanía de los datos, para así poder predecir la clase objetivo. Este
+  cercanía de los datos, para así poder predecir la clase objetivo. </br>Este
   algoritmo se basa en la distancia euclidiana, la cual nos permite conocer la
   distancia entre dos puntos.
 </p>
